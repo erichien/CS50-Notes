@@ -230,3 +230,4 @@ def index():
 
 this is saying the index() method should be called anytime the user requests the route “/“, and return the rendering of this “index.html” file.
 route is like a path, such as “/”, “/home”
+
