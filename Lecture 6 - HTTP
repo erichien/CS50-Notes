@@ -1,0 +1,339 @@
+Web Programming
+
+The structure of an HTML document can be represented as a tree. 
+
+internet is just the interconnection of different networks, where internet services like email run on top of
+
+routers route information and assign settings to computers.
+
+inside routers run the software, the DHCP protocol (Dynamic Host Configuration Protocol) assigns IP address to computers (IP stands for Internet Protocol). IPv4 is a combination of 4 number of 8 bits (0-255), which is 32 bits in total (no more than 4 billion addresses)
+
+Private IP examples:
+10.#.#.#
+172.16.#.# - 172.31.#.#
+192.168.#.#
+
+DNS (Domain Name System) converts numeric IP addresses to Host Names (and the other way around), Domain Names (ex: google.com?) What is the exact process? Computer uses numeric IP addresses to talk to the hosts like google. The computer first asks the OS like Mac or Windows what the IP address of the host is, if the OS doesn’t know, the OS will then as the network such as Cornell’s network or Time Warner’s network, because each of the network has its DNS server, if the DNS server doesn’t know, there are globally administered Route Servers, which can help the DNS servers figure out the IP address. (In other words, DNS knows the IP address of a host because it has previously asked the host or other routers for the IP and stores it, when asked again by other computers, it relays that information.
+
+Routers are servers/computers
+
+when a computer wants to communicate with google (a host?),
+
+It asks the DNS server of the IP address of the host. After the DNS server has informed the computer of the IP address of the host, it creates a packet with a request (for example: give me all search results for cats) along with the IP of the host and the computer inside it, that packet is then handed to the nearest router (ex: at Cornell), it will then keep routing to other routers until it reaches the destination (where the IP address indicates). 
+
+nslookup (Name Server Lookup?)
+
+For example:
+
+>>> nslookup www.google.com
+(DNS server address and host’s IP address will be returned)
+
+traceroute + url
+
+this command prints the route a packet takes to the network host (ex: www.google.com)
+
+>>> traceroute www.google.com
+
+
+IP (Internet Protocol)
+
+IP is responsible for addressing, assigning computers on the network unique addresses.
+
+IP has the task of delivering packets from the source host to the destination host solely based on the IP addresses in the packet headers. 
+
+IP defines packet structures that encapsulate the data to be delivered. It also defines addressing methods that are used to label the datagram with source and destination information.
+
+IPv4
+
+IPv4 provides an addressing capability of 2^32 or (~4.3 billion addresses. 8 bits = 0~255. IPv4 has 4x8 bits.
+￼
+
+IPv6
+
+IPv6 uses a 128-bit address, allowing 2^128 addresses.
+
+IPv6 addresses are represented as eight groups of four hexadecimal digits (each hexadecimal digit can represent 16 (=2^4) different states (0~e), thus four hexadecimal digits can represent 2^(4+4+4+4) = 2^16) with the groups being separated by colons, for example:2001:0db8:0000:0042:0000:8a2e:0370:7334
+￼
+
+fragmentation?
+
+SSH (Secure Shell)
+
+SSH provides a secure channel over an unsecured network in a client-server architecture, connecting an SSH client application with an SSH server. Common applications include remote command-line login by users, and remote command execution.
+
+Telnet
+
+Telnet is a protocol used on the Internet or local area networks to provide an unencrypted bidirectional interactive text-oriented communication facility using a virtual terminal connection. 
+
+TCP (Transmission Control Protocol)
+
+guarantees delivery of packets, and responsible for sequence number of the packets.
+
+The Transmission Control Protocol (TCP) is one of the main protocols in the initial network implementation, complementing the Internet Protocol (IP). Therefore it is commonly referred to as TCP/IP. 
+
+TCP provides reliable, ordered, and error-checked delivery of a stream of data between applications running on hosts communicating by an IP network. 
+
+Applications such as World Wide Web, email, file transfer uses TCP. 
+
+UDP (User Datagram Protocol)
+
+There is no guarantee of delivery, ordering, or duplicate protection. usually used for live streaming.
+
+UDP is suitable for purposes where error checking and correction are either not necessary or are performed in the application. 
+
+Applications that do not require reliable data transmission service, or time-sensitive applications often use UDP because dropping packets is preferable to waiting for delayed packets, emphasizing reduced latency over reliability.
+
+With UDP, computer applications can send messages, in this case referred to as datagrams, to other hosts on an Internet Protocol (IP) network.
+
+SMTP (Simple Mail Transfer Protocol)
+
+SMTP is an Internet standard for electronic mail (email) transmission. Email servers of services like Gmail and Outlook use SMTP to send and receive mail messages.
+
+User-level client mail applications typically use SMTP only for sending messages to a mail server, IMAP or POP3 for retrieving messages.
+
+IMAP (Internet Message Access Protocol)
+
+IMAP is an Internet standard protocol used by e-mail clients to retrieve e-mail messages from a mail server over a TCP/IP connection.
+
+POP (Post Office Protocol)
+
+Post Office Protocol (POP) is an application-layer Internet standard protocol used by local e-mail clients to retrieve e-mail from a remote server over a TCP/IP connection. POP3 was the last standard in common use before largely being replaced by the more advanced IMAP as well as webmail.
+
+DHCP (Dynamic Host Configuration Protocol)
+
+DHCP is a network protocol used on Internet Protocol (IP) networks. 
+
+The DHCP is controlled by a DHCP server that dynamically distributes network configuration parameters, such as IP addresses, for interfaces and services. A router or can be enabled to act as a DHCP server. A DHCP server enables computers to request IP addresses and networking parameters automatically. 
+
+Without a DHCP server, each device (e.g., a phone, computer, printer) on the network needs to be statically (i.e., manually) assigned to an IP address.
+
+PORT
+
+indicate the type of service
+
+21 FTP (File Transfer Protocol for transferring files, but insecure)
+22 SSH (Secure Shell, lets us run commands on a remote server in an encrypted way)
+25 SMTP (Simple Mail Transfer Protocol, for emails)
+53 DNS (Domain Name System, used when users sends out request to look up IP addresses)
+80 HTTP (Hypertext Transfer Protocol)
+443 HTTPS
+
+Firewall
+
+software (on servers or the local computer) that keeps unwanted packets out, and blocks out-bound access (ex: to secure important information for a company or restrict access to certain websites at school) by blacklisting the “from”(origin) server addresses of incoming connection or “to”(destination) server addresses of outgoing connection. it might be hard to do as a network host like 1) Facebook would have multiple IP addresses, 2) encryption might not allow the to or from IP address to be identified. 
+
+By blocking port 80 and 443 (HTTP & HTTPS) would restrict most web access. 
+
+By blocking port 53 (external DNS servers), and allowing only using a company/router’s DNS will the company/router be able to limit/track the users’ internet usage.
+
+VPN (Virtual Private Network)
+
+software that allows users to connect to the network of a school or organisation via some protocol and some port in an encrypted way, and creates a tunnel that routes all the internet traffic though the VPN (ex: Cornell’s VPN), a.k.a all the traffic is going through Cornell first then to Facebook, then passed back to Cornell then back to wherever the user is.
+
+LAN (Local Area Network)
+WLAN (Wireless Local Area Network)
+
+A local area network (LAN) is a computer network that interconnects computers within a limited area such as a residence, school, laboratory, university campus or office building and has its network equipment and interconnects locally managed.
+
+Size: LAN < WAN (Wide Area Network) < Internet
+
+By contrast to LAN, wide area network (WAN), not only covers a larger geographic distance, but also generally involves leased telecommunication circuits or Internet links. An even greater contrast is the Internet, which is a system of globally connected business and personal computers.
+
+Proxy (Servers)
+
+In computer networks, a proxy server is a server (a computer system or an application) that acts as an intermediary for requests from clients seeking resources from other servers. 
+
+A client connects to the proxy server, requesting some service, such as a file, connection, web page, or other resource available from a different server. 
+
+Proxies were invented to add structure and encapsulation to distributed systems. Today, most proxies are web proxies, facilitating access to content on the World Wide Web, providing anonymity and may be used to bypass IP address blocking.
+
+￼
+
+Bob does not know to whom the information is going, which is why proxies can be used to protect privacy.
+
+￼
+￼
+
+
+Protocols
+
+Predefined conventions of how computers communicate. Conventions like shaking hands when meeting people. 
+
+HTTP (Hypertext Transfer Protocol)
+
+HTTP is the underlying protocol used by the World Wide Web. It defines how messages are formatted and transmitted, and what actions Web servers and browsers should take in response to various commands.
+
+GET
+
+POST
+used for login
+HEAD
+
+PUT
+
+DELETE
+
+TRACE
+
+OPTIONS
+
+CONNECT
+
+PATCH 
+
+
+￼
+￼
+
+
+HTTP Status Codes
+
+￼
+
+1xx Informational responses
+
+An informational response indicates that the request was received and understood.
+
+2xx Success
+
+This class of status codes indicates the action requested by the client was received, understood, accepted, and processed successfully.
+
+3xx Redirection
+
+4xx Client errors
+
+5xx Server error
+
+curl
+
+curl is a tool to transfer data from or to a server, using one of the supported protocols (FILE, FTP, FTPS, HTTP, HTTPS, IMAP, IMAPS, POP3, POP3S, SMTP, SMTPS, TELNET, etc.).
+
+local host address
+
+every computer’s local host address is http://127.0.0.1
+port 8080 is a non-standard port
+
+when a local host (server) is set up and running, it starts listening on the internet, on our computer’s IP address on TCP port 80 for incoming HTTP requests, and responds to them
+
+
+HTML (Hypertext Markup Language)
+CSS (Cascading Style Sheets)
+
+<!DOCTYPE html>
+
+this line identifies the file as html5
+
+
+
+<div style=“text-align: center;”>
+	<div style=“font-size: 36px; font-weight: bold;”>
+		John Harvard
+	</div>
+	<div style=“font-size: 24px;”>
+		Welcome!
+	</div>
+</div>
+
+HTML: 		’div’ defines a rectangular ‘division’, ’style’ is an 				attribute
+CSS: 		‘font-size’ and ‘font weight’ are CSS properties
+
+<head>
+	<style>
+	body
+	{
+		text-align: center;
+	}
+	#top
+	{
+	font-size: 12px;
+	}
+	</style>
+<body>
+	<div id=“top”>
+
+we can use the ‘id’ attribute and add a <style> tag within <head> to define all the properties of the id attribute
+
+HTML file:
+
+<head>
+	<link href="theme.css" rel="stylesheet"> 
+</head>
+<body>
+	<div id=“top”>
+
+CSS file:
+
+body
+{
+	text-align: center;
+}
+#top 
+{
+	font-size: 12px;
+}
+
+we can put the styles in a separate .css file, and apply to different pages on the entire website
+‘rel’ refers to the ‘relationship to this file’
+
+<div>Copyright &#169; John harvard</div>
+‘&#169;’ is an html entity, a standardised way to insert special symbols/characters
+
+<img alt=“” src=“”/>
+
+adding the ‘/‘ within the img tag like above is equivalent to <img src=“”></img>, creating an empty element.
+
+‘alt’ is the image description
+
+<ul>
+	<li>item1</li>
+	<li>item2</li>
+</ul>
+
+‘ul’ is ‘unordered list’
+‘li’ is list ‘item’
+
+results: 
+
+- item1
+- item2
+
+<ol>
+	<li>item1</li>
+	<li>item2</li>
+</ol>
+
+‘ol’ is ‘ordered list’
+
+results: 
+
+1. item1
+2. item2
+
+<table>
+	<tr>
+		<td>1</td>
+		<td>2</td>
+	</tr>
+	<tr>
+		<td>3</td>
+		<td>4</td>
+	</tr>
+</table>
+
+’tr’ stands for ‘table row’
+’td’ stands for ‘table data’, a.k.a. column 
+
+result:
+
+1   2
+3  4
+
+<body>
+	<form action=“https//:www.google.com/search” method=“get”>
+		<input name=“q” type=“text”/>
+		<input type=“submit”/>
+		<input type=“submit” value=“I’m Feeling Lucky”/>
+	</form>
+</body>
+
+above is the front end of Google
