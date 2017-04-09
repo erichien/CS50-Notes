@@ -1,0 +1,232 @@
+Pass by Value and Pass by Reference
+Pointers
+
+void swap(int a, int b);
+
+int main(void)
+{
+	int x = 1;
+	int y = 2;
+	swap(x, y);
+}
+
+void swap(int a, int b)
+{
+	int tmp = a;
+	a = b;
+	b = tmp;
+}
+
+In a function as above, nothing will happen to the original int x and int y, as we are only passing a copy of a and b into the function.
+
+To actually change the value of a variable with a function, use the & symbol to pass a variable by reference, and &x is a pointer that is pointing towards the memory address of x.
+
+ex: swap(&x, &y);
+
+while in the function swap(), we then use the * symbol to dereference the passed in pointers. The * indicates that it will retrieve whatever value (may it be int or char) at the memory address that pointer immediately after the * is pointing to, so the function can get or change the value at the memory addresses
+
+void swap(int *a, int *b);
+
+int main(void)
+{
+	int x = 1;
+	int y = 2;
+	swap(&x, &y);
+}
+
+ex: void swap(int *a, int *b)
+{
+	int tmp = *a;  // notice how tmp is an integer, which will become the value where a is pointing at
+	*a = *b;
+	*b = tmp;
+}
+
+“int *a” should be parsed as “int *”(this argument is a pointer that points to an integer) and “a”(a is the name), a.k.a the argument is a pointer named a. In other words, a is a pointer pointing to an integer. Therefore, “the function expects a pointer to be passed in.”
+
+An integer stores a numerical value, while a pointer stores a memory address.
+Suppose you are in  the function swap() when you print out pointer ‘a’, the value is a memory address. &x is also a pointer, so the value of ‘&x’ is also a memory address. In this case since &x is passed into the function, therefore “a” represents “&x”, so their values are the same (a = &x), which is the memory address of x.
+
+Adding a * in front of a pointer would retrieve the value at the memory address stored by the pointer. As we know a = &x, therefore *a = *&x = x
+
+void swap(int &a, int &b) {}          vs.           void swap(int *a, int *b) {}
+
+void swap(int &a, int &b) {}    
+and    
+void swap(int *a, int*b) {}
+are two totally different things! 
+
+“int &a” should be seen as “int” and “&a”, which means “the function expects an integer. We should pass in an integer (int), but the function will go to the integer’s (in this case with an alias called ‘a’) memory address (&a)”. when calling the function, we simply pass in the variable like this swap(a, b)
+
+Quotation Mark for char and string
+
+‘ ’ is used for char, a single letter while “ ” is used for a string
+
+Python vs C
+
+C sometimes have to manipulate memory at its lowest level, like when adding capacity to a structure such as growing a string
+(not sure) write the source code in a .c file, C needs to be compiled. we first run clang or gcc (the compiler) to output source code from machine code, then run ./a.out
+C reads file top to bottom, left to right, and we should have a forward declaration of the function we use before we use it, for example: 
+
+int get_int(); 
+
+int main(void) { 
+	int i = get_int(); 
+} 
+
+int get_int(void) { 
+
+}
+
+
+Structs in C
+contains only data
+
+malloc
+
+strcopy
+
+toupper
+
+
+Python is of higher level
+Python doesn’t have pointers
+Python is not type safe, in C you would have to declare the datatype with the value
+when running “python hello.py”, the “python” is the python interpreter. it compiles the python source code into byte code, then the byte code is interpreted top-bottom, left-right
+python is a language, and a program that understands the language itself, otherwise known as the interpreter
+The default line ending is ‘\n’ in python, which is why it doesn’t need to be written explicitly like in C, to change it, we can do print(‘hi’, end=‘’) in Python3
+
+Both C and Python have the issue of imprecision
+
+Python vs C: Immutability
+
+In C, a string is mutable.
+
+In Python, an object like string is immutable, we can’t go in to change one character of it. If we operate .capitalize() on it, it will only return a capitalised copy, but the string itself will not be changed. 
+Even if a string is passed into a function, we can’t change it either.
+
+Object Oriented Language, Class, Instance Variables, Methods
+
+While C only has structs, Python has objects. An object can not only hold data, but also built-in functionality.
+For example: the string variable is an object. The value/data of the string can be ‘abcd’. But the string object also has built-in functions/methods like format(), capitalize()
+
+When implementing a class, the “self” refers to the object that has been allocated, and an instance variable is a variable defined in a class, methods are the member functions we define in the class Therefore, when writing methods, we might need to call some variables that are defined in __init__, then we should use self.variable1, meaning the variable1 of the object.
+
+When we have created object, a.k.a. an instance of this class (for example: we have “class TicTacToe” and we created object “game = TicTacToe()”), then we will need to use game.in_class_variable or game.in_class_method to call the functions(=methods) or variables we have defined in the class.
+
+higher level languages (many can be interpreted)
+
+Python, Ruby, Javascript, PHP
+
+Python
+
+Complex (this is a data type like list, int, string) (complex/imaginary numbers = 複數)
+>>> 1j
+1J
+>>> 1j * 1j
+-1+0j
+>>> a = 1j
+>>> type(a)
+<type 'complex'>
+>>> a.real
+0.0
+>>> a.imag
+1.0
+
+# if a module is being run directly, then __name__ variable is set to the string "__main__”. For example, If this specific test.py program is run directly by the command “python test.py”, the hello function, or anything defined under the if statement will run (by default). If this test.py file is imported to another .py file called try.py, and we run the try.py, then the hello function will not be run, only the default functions defined in the try.py file will be run.
+
+# test.py
+def hello()
+	print “Aloha!”
+
+if __name__ == "__main__": 
+	hello()
+
+# So this approach is an advantage over calling some function directly by the function name in a program directly like the try.py bellow, where the function will run both when it is called, and when any other file that imports try.py is called.
+
+# try.py
+def hello()
+	print “Aloha!”
+
+hello()
+
+
+Difference between Python 2 and 3
+
+not more xrange (-> range), raw_input (-> input), print function with parenthesis
+division ‘/’  of two integers yields decimals in Python3 and the remaining integer in Python2
+
+input() and raw_input()
+
+The raw_input() in Python2 is the input() in Python3, they return the user input value as a string. There is no more raw_input() in Python3. There are raw_input() and input() in Python2 but they are different. If use input() in Python2, the user will have to manually input, quote unquote, 
+
+So the Python 2 and 3 codes bellow are equivalent
+
+# Python2
+a = raw_input('Your name is ? \n') 
+print type(a) 
+print "hello, {}".format(a)  # uses str.format(), and the {} placeholder
+print 'hello, %s' % a
+
+# Python3
+user = input('Your name is ? \n') 
+print (type(user)) 
+print ("hello, {}".format(user)) 
+print ('hello, %s' % user)
+
+str.format() method, {} placeholder 
+
+multiple inputs of different data types can be user for str.format()
+ex: str.format(var, str, int)
+
+>>> a = ‘Sammy loves {}’
+>>> a.format(‘fish’)
+Sammy loves fish
+>>> a.format(6)
+Sammy loves 6
+
+sys.argv
+
+# test.py
+import sys
+print sys.argv 
+print 'the filename is {}, and input one is {}, input two is {}'.format(sys.argv[0], sys.argv[1], sys.argv[2])
+
+>>> python test.py 1 2
+['test.py', '1', '2']
+the filename is test.py, and input one is 1, input two is 2
+
+chr(num)
+
+chr(num) returns the corresponding ascii value of the num
+
+exit(num)
+
+we use exit() to exit a program, instead of just the function (we’d use return)
+the exit code, num, will be returned to the shell. by running the ‘echo $?’ we will know what is the exit code of the previously run program. 
+
+tuple
+
+we can see “x, y = y, x” as tuples exiting at two sides of the equal sign. (x, y) = (y, x)
+we can also append a tuple by for example, list.append((1,2))
+
+Set
+
+>>> from sets import Set 
+>>> engineers = Set(['John', 'Jane', 'Jack', 'Janice'])
+
+flask
+
+flask is a micro framework, which means it doesn’t have a large number of features.
+
+app = Flask(__name__) 
+
+means an application of type Flask, passing in the name of this file. __name__ literally just refers to this file we are editing. It’s asking Python to give us a Flask application based on this file
+
+decorator
+
+@app.route(“/“)
+def index():
+	return render_template(“index.html”)
+
+this is saying the index() method should be called anytime the user requests the route “/“, and return the rendering of this “index.html” file.
+route is like a path, such as “/”, “/home”
