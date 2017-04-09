@@ -47,7 +47,6 @@ IPv4
 
 IPv4 provides an addressing capability of 2^32 or (~4.3 billion addresses. 8 bits = 0~255. IPv4 has 4x8 bits.
 ￼
-
 IPv6
 
 IPv6 uses a 128-bit address, allowing 2^128 addresses.
