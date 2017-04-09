@@ -52,9 +52,6 @@ IPv6
 IPv6 uses a 128-bit address, allowing 2^128 addresses.
 
 IPv6 addresses are represented as eight groups of four hexadecimal digits (each hexadecimal digit can represent 16 (=2^4) different states (0~e), thus four hexadecimal digits can represent 2^(4+4+4+4) = 2^16) with the groups being separated by colons, for example:2001:0db8:0000:0042:0000:8a2e:0370:7334
-￼
-
-fragmentation?
 
 SSH (Secure Shell)
 
