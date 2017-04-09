@@ -143,10 +143,7 @@ A client connects to the proxy server, requesting some service, such as a file, 
 
 Proxies were invented to add structure and encapsulation to distributed systems. Today, most proxies are web proxies, facilitating access to content on the World Wide Web, providing anonymity and may be used to bypass IP address blocking.
 
-￼
-
 Bob does not know to whom the information is going, which is why proxies can be used to protect privacy.
-
 
 Protocols
 
