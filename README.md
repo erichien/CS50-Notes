@@ -1,1 +1,1 @@
-# CS50-Notes
+# CS50 Notes
