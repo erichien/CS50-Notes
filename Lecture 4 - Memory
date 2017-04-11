@@ -45,12 +45,6 @@ x = malloc(sizeof(int));
 y = x
 If we let y = x, they will point to the same pointee, and changing *y will change *x since they are the same address.
 
-￼
-￼
-￼
-￼
-￼
-
 If we only initialise a pointer and do not set up a pointee (allocate a certain size of memory and assigns it to the pointer), segmentation fault will be raised. 
 
 int *x;
