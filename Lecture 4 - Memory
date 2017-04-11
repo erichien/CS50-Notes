@@ -53,8 +53,6 @@ x = malloc(sizeof(int));
 int *y;
 *y = 15;
 
-￼
-
 ‘char *s’ is a pointer.
 when we want to print out the value of a character in the string.
 we can use printf(“%c \n”, s[i]); or printf(“%c \n”, *(s+i)). they are the same thing.
