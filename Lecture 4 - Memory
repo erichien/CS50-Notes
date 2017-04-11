@@ -149,3 +149,4 @@ fclose()
 file is a variable that will store the address of a file
 
 fprintf prints output into a file. The file here is the file we have opened above.
+
