@@ -8,8 +8,6 @@ heap
 
 Stack frame
 
-￼
-
 In C, a string is actually a pointer that stores the memory address of the first character of a string in the computer’s memory, while in Python, a string is an object. Therefore, when comparing two strings in C, they would be different (if one is not a duplicate, a pointer pointing to the other one) as they are memory addresses, but in Python, when comparing two strings, we are truly comparing the characters.
 
 char * 
