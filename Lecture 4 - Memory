@@ -26,7 +26,6 @@ For example:
 
 char *s = malloc(8)
 
-
 ‘int *’ is a pointer pointing to  
 ‘char *’ is a pointer pointing to 
 
