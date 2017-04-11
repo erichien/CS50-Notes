@@ -1,0 +1,48 @@
+Big O
+
+upper bound of running time, worst case
+
+Omega Ω
+
+lower bound of running time, best case
+
+Theta Θ
+
+when O and Ω have the same values, we can use Θ to convey two ideas at once
+
+Sort
+
+the best case runtime of sorting will always be more than Ω(n), so it can never be Ω(log(n)) as we will need to see every element at least once
+
+Selection Sort
+
+O(n^2)
+Ω(n^2) as we need to check (n-1) times in total for the smallest, then second smallest… item before swapping or not swapping them
+
+https://upload.wikimedia.org/wikipedia/commons/9/94/Selection-Sort-Animation.gif
+
+Bubble Sort
+
+worst case O(n^2) 
+since (n-1) + (n-2) + … + 1 = n(n-1)/2
+
+best case Ω(n)
+compare every two once
+
+https://upload.wikimedia.org/wikipedia/commons/c/c8/Bubble-sort-example-300px.gif
+
+Insertion Sort
+
+worst case O(n^2) 
+best case Ω(n)
+
+https://upload.wikimedia.org/wikipedia/commons/0/0f/Insertion-sort-example-300px.gif
+
+Merge Sort
+
+Time complexity:
+worst case O(n*log(n))
+best case Ω(n*log(n))
+therefore, merge sort is Θ(n*log(n))
+
+Space complexity: requires O(n) extra space
