@@ -108,13 +108,9 @@ program using more memory than it should have
 
 BMP (bitmap)
 
-￼
-
 JPEG
 
 all jpegs start with the same three bits: 255, 216, 255.
-
-￼
 
 by identifying digits with 0xff 0xd8 0xff in the beginning, this is how we recover jpeg images from memory cards
 
