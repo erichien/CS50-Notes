@@ -1,0 +1,172 @@
+Memory
+
+￼
+
+ram
+initialised data
+unintialized data
+stack
+heap
+
+Stack frame
+
+￼
+
+In C, a string is actually a pointer that stores the memory address of the first character of a string in the computer’s memory, while in Python, a string is an object. Therefore, when comparing two strings in C, they would be different (if one is not a duplicate, a pointer pointing to the other one) as they are memory addresses, but in Python, when comparing two strings, we are truly comparing the characters.
+
+char * 
+
+‘char *’ is a pointer, an integer representing the address of a char, it is a data type that lets us store the address of a character, not a string.
+
+malloc (memory allocate)
+
+asks the operating system for a bunch of bytes of memory
+
+The memory asked need to include (the length of the string plus + 1 (which is for the back slash zero at the end of the string) ) * size of a character, which is 1 byte. 
+
+The malloc will them return the address of the first byte of the memory. If there is no enough memory, NULL will be returned.
+
+For example:
+
+char *s = malloc(8)
+
+
+‘int *’ is a pointer pointing to  
+‘char *’ is a pointer pointing to 
+
+The size of a character is 1 byte
+The size of an integer is 4 bytes
+
+Initially, pointers don’t point to anything.
+The address a pointer points to is called pointee.
+Setting up the pointee is a separate step (a.k.a. the malloc() part)
+Then we dereference the pointer to store numbers into its pointee.
+
+int *x;
+x = malloc(sizeof(int));
+*x = 48;
+
+y = x
+If we let y = x, they will point to the same pointee, and changing *y will change *x since they are the same address.
+
+￼
+￼
+￼
+￼
+￼
+
+If we only initialise a pointer and do not set up a pointee (allocate a certain size of memory and assigns it to the pointer), segmentation fault will be raised. 
+
+int *x;
+x = malloc(sizeof(int));
+*x = 48;
+
+int *y;
+*y = 15;
+
+￼
+
+‘char *s’ is a pointer.
+when we want to print out the value of a character in the string.
+we can use printf(“%c \n”, s[i]); or printf(“%c \n”, *(s+i)). they are the same thing.
+
+C Data Types and Sizes
+
+char	1 byte		0 to 255 (unsigned char)
+					-128 to 127 (signed char)
+int		4 bytes		0 to 4,294,967,295 (unsigned int)
+					-2,147,483,648 to 2,147,483,647 (signed int)
+float	4 bytes
+
+To check this:
+
+#include <stdio.h> 
+#include <stdlib.h> 
+
+int main(void) { 
+	
+	char *y = malloc(sizeof(char)); 
+	printf("memory size of a char = %d \n", sizeof(char)); 
+
+	int *x = malloc(sizeof(int)); 
+	printf("memory size of an int = %d \n", sizeof(int)); 
+
+	float *z = malloc(sizeof(float)); 
+	printf("memory size of a float = %d \n", sizeof(float));
+	
+	double *a = malloc(sizeof(double));
+	printf("memory size of an double = %d \n", sizeof(double));
+
+return 0; }
+
+to which will return:
+
+size of a char = 1
+size of an int = 4
+size of a float = 4
+size of an double = 8
+
+Memory Leak
+
+When a program keeps asking the computer for memory and doesn’t give it back
+
+free(x)
+
+free is the opposite of malloc(). It frees up memory and gives it back to the computer.
+
+Stack overflow, Heap overflow
+(they are both a kind of buffer overflow)
+
+program using more memory than it should have
+
+￼
+￼
+￼
+
+BMP (bitmap)
+
+￼
+
+JPEG
+
+all jpegs start with the same three bits: 255, 216, 255.
+
+￼
+
+by identifying digits with 0xff 0xd8 0xff in the beginning, this is how we recover jpeg images from memory cards
+
+struct
+
+typedef struct
+{
+	string name;
+	string dorm;
+}
+student;
+
+with this, we are defining a type of new structure, with two fields: name and dorm. And we name this new structure “student”.
+
+#define STUDENTS 3
+
+this defines a constant called STUDENT which is equal to the value 3, and the convention is to use all caps for the constant.
+
+This is not a variable, but a keyword with a fixed value
+
+student students[STUDENTS]
+
+“student” is the type of this array structure (the one we defined above).
+“students” is the name of the array.
+STUDENTS is the value 3.
+
+this is literally asking the computer to give us an array called student, it is of size 3, inside of which is 3 students.
+
+students[i].name
+students[i].dorm
+
+FILE *file = fopen(“students.csv”, “w”);
+fprintf(file, “%s\n”, students[i].name, students[i].dorm);
+fclose()
+
+file is a variable that will store the address of a file
+
+fprintf prints output into a file. The file here is the file we have opened above.
