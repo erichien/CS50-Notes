@@ -46,3 +46,5 @@ best case Ω(n*log(n))
 therefore, merge sort is Θ(n*log(n))
 
 Space complexity: requires O(n) extra space
+
+
