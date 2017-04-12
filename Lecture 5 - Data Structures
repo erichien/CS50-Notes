@@ -37,8 +37,6 @@ can easily allocate new node (unlike array, where spaces are fixed), but in orde
 If tree is not balanced, the tree might be growing down only one side of the node, and searching through the tree might take O(n).
 
 ￼
-￼
-
 Compression
 
 Huffman Coding
