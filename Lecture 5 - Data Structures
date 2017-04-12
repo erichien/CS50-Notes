@@ -5,6 +5,7 @@ Linked List
 
 allows us to freely make new space or shrink space for data by linking memory blocks from different places together. This is not attainable by array lists.
 
+
 Memory
 
 Speed: register (on CPU) > cache (CPU) > random access memory (RAM) > flash drive / USB memory > hard drive
