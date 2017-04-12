@@ -13,6 +13,7 @@ Speed: register (on CPU) > cache (CPU) > random access memory (RAM) > flash driv
 virtual memory (slow, cause divided from hard disk)
 https://en.wikipedia.org/wiki/Virtual_memory
 
+
 Stack
 
 (LIFO)
