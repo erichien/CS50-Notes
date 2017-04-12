@@ -62,8 +62,6 @@ Trie (= retrieval) (pronounced like: try)
 
 Trie is short for retrieval, it is a tree each of whose nodes is in an array.
 
-￼
-
 Searching whether a word exist in a trie only needs O(1) constant time (as it is not dependent on the number of entries in the trie and the length of a word is usually not long, so we call it constant), as the length of the word being searched is the number of steps needed to find it. It is not affected by the number of words that are in the Trie.
 
 
