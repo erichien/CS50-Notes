@@ -63,6 +63,7 @@ asymptotic running time
 
 逼近的 run time
 
+
 Trie (= retrieval) (pronounced like: try)
 
 Trie is short for retrieval, it is a tree each of whose nodes is in an array.
