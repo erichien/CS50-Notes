@@ -58,6 +58,7 @@ Linked List
 
 By storing pointers in the hash table, we can extend the has table indefinitely with linked lists. Inserting or deleting or searching within this cell would be O(n) linear time operations. But the time needed is still much less than the original time we would have needed, as it is divided by all the cells
 
+
 asymptotic running time
 
 逼近的 run time
