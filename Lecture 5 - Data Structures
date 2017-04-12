@@ -47,9 +47,6 @@ based on trees. optimised for the common case
 
 The node representing less frequency ends on the left, the node with more frequency ends on the right
 
-￼
-￼
-
 https://en.wikipedia.org/wiki/Huffman_coding#/media/File:Huffman_huff_demo.gif
 
 Hash Table
