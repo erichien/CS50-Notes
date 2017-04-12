@@ -1,5 +1,6 @@
 Data Structures
 
+
 Linked List
 
 allows us to freely make new space or shrink space for data by linking memory blocks from different places together. This is not attainable by array lists.
