@@ -1,0 +1,88 @@
+Data Structures
+
+Linked List
+
+allows us to freely make new space or shrink space for data by linking memory blocks from different places together. This is not attainable by array lists.
+
+￼
+￼
+
+Memory
+
+Speed: register (on CPU) > cache (CPU) > random access memory (RAM) > flash drive / USB memory > hard drive
+
+￼
+
+virtual memory (slow, cause divided from hard disk)
+https://en.wikipedia.org/wiki/Virtual_memory
+
+Stack
+
+(LIFO)
+push
+pop
+
+￼
+￼
+
+Queue
+
+(FIFO)
+enqueue
+dequeue
+
+￼
+￼
+￼
+
+Tree
+
+BST (Binary Search Tree)
+
+can easily allocate new node (unlike array, where spaces are fixed), but in order to maintain logarithmic search time O(n), we need algorithm to keep the tree balanced.
+
+If tree is not balanced, the tree might be growing down only one side of the node, and searching through the tree might take O(n).
+
+￼
+￼
+
+Compression
+
+Huffman Coding
+
+based on trees. optimised for the common case
+
+The node representing less frequency ends on the left, the node with more frequency ends on the right
+
+￼
+￼
+
+https://en.wikipedia.org/wiki/Huffman_coding#/media/File:Huffman_huff_demo.gif
+
+Hash Table
+
+Linear Probing
+
+One way to resolve collision by randomly putting new data at any cell available, but this may eventually lead to O(n) search time.
+
+Linked List
+
+By storing pointers in the hash table, we can extend the has table indefinitely with linked lists. Inserting or deleting or searching within this cell would be O(n) linear time operations. But the time needed is still much less than the original time we would have needed, as it is divided by all the cells
+
+asymptotic running time
+
+逼近的 run time
+
+Trie (= retrieval) (pronounced like: try)
+
+Trie is short for retrieval, it is a tree each of whose nodes is in an array.
+
+￼
+
+Searching whether a word exist in a trie only needs O(1) constant time (as it is not dependent on the number of entries in the trie and the length of a word is usually not long, so we call it constant), as the length of the word being searched is the number of steps needed to find it. It is not affected by the number of words that are in the Trie.
+
+
+
+
+stack(LIFO) heap(FIFO)
+https://www.quora.com/What-is-the-difference-between-the-stack-and-the-heap
