@@ -1,0 +1,98 @@
+JavaScript
+
+JavaScript was usually used and executed on the client side, but now also on the server side by Node.js.
+
+With JavaScript, we have the ability to change the HTML tree (the DOM, Document Object Model) in real time. Typically, after download a web page from the server, it is static. With JavaScript, we can allow the user to interact with the web page, or it can do things like auto-reload, add a new roll when a new message comes in, JavaScript adds dynamism to the web page.
+
+It’s like having JavaScript run a loop waiting on whether the server has sent it new content, when there is new content, something new pops up.
+
+JavaScript is, like Python, not strongly typed. It has data types, but you don’t want to specify them when declaring the variable.
+
+Syntax
+
+Colons
+
+single quotation mark or double quotation marks are both ok. Although single is mostly used.
+
+Boolean
+
+“true” and “false” are in lower case.
+
+if (x < y)
+{
+	…
+}
+else if (x > y)
+{
+	…
+}
+else
+{
+	…
+}
+
+Arrays
+
+var numbers = [1, 2, 3, 4, 5];
+
+Iterating over the keys in an object. 
+Objects are like key-value pairs. By iterating over keys we can get the object to return the values.
+
+for (var key in object)
+{
+	…
+}
+
+Declaring a variable
+
+var i = 0;
+(we need semicolons at the end)
+
+Objects
+
+var quote = {
+	name: ‘Netflix, Inc. ’,
+	price: 123.30,
+	symbol: ’NFLX’
+};
+
+(similar to dictionary in Python)
+(comma after every key-value pair, except for the last one)
+(semicolon outside the curly braces) 
+
+
+
+JSON (JavaScript Object Notation)
+
+Store data with hierarchical format.
+MUST quote strings with double quotes!
+
+Events
+
+These are some examples of events that can be triggered within the confines of a web page.:
+click, mousedown, mouseup, mouseover, drag, keypress, load, unload, change, submit, focus, touchmove…
+
+Event listeners
+
+there can be event listener for the click event. code that listens for the click event.
+drag is an event
+
+Asynchronicity
+
+Asynchronicity means, multiple things can happen at the same time.
+
+User’s actions are unpredictable, it can click or drag something at any time. So instead of a top to bottom structure kind of code, we need a lot of conditions: “if this then that”.
+
+To register functions: to associate “functions” with the “events”
+
+Anonymous Functions
+
+or Lambda functions. functions that have no name. sometimes are for functions we only need to call or refer to once
+
+Callbacks
+
+callbacks are functions configured to be called at a certain point in time when something happens.
+
+AJAX
+
+Asynchronous JavaScript And XML
